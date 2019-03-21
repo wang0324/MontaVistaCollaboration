@@ -59,7 +59,7 @@ public class EducationParser {
     }
 
 
-    public static ArrayList<EducationData> parseEducation2016(String data) {
+    public static ArrayList<EducationData> parseEducation(String data) {
         ArrayList<EducationData> results = new ArrayList<>();
 
         String[] dataArr = splitData(data);
