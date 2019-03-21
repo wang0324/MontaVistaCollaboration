@@ -8,8 +8,8 @@ import java.util.Scanner;
  * @author Marc Corfmat
  */
 public class EducationParser {
-    private static final int START_INDEX_EDUCATION = 70;
-    private static final int INDECES_PER_OBJECT_EDUCATION = 87;
+    private static final int START_INDEX_EDUCATION = 2;
+    private static final int INDECES_PER_OBJECT_EDUCATION = 43;
 
     public static String readFileAsString(String filepath) {
         StringBuilder output = new StringBuilder();
@@ -66,10 +66,10 @@ public class EducationParser {
 
         for (int i = START_INDEX_EDUCATION; i < dataArr.length; i += INDECES_PER_OBJECT_EDUCATION) {
             String countyName = dataArr[i];
-            double noHighSchool = Double.parseDouble(dataArr[i + 1]);
-            double onlyHighSchool = Double.parseDouble(dataArr[i + 2]);
-            double someCollege = Double.parseDouble(dataArr[i + 3]);
-            double bachelorsOrMore = Double.parseDouble(dataArr[i + 4]);
+            double noHighSchool = Double.parseDouble(dataArr[i + 37]);
+            double onlyHighSchool = Double.parseDouble(dataArr[i + 38]);
+            double someCollege = Double.parseDouble(dataArr[i + 39]);
+            double bachelorsOrMore = Double.parseDouble(dataArr[i + 40]);
 
             EducationData result = new EducationData(countyName, noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore);
 

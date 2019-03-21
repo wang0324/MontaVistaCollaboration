@@ -11,5 +11,6 @@ public class Main {
         ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
 
         System.out.println(educationData.toString());
+
     }
 }
