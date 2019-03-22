@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
+        //TODO: Marc please implement your own toString method
 //        String educationFile = DataParser.readFileAsString("Data/Education.csv");
 //
 //        ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
