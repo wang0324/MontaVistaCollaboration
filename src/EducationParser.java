@@ -11,22 +11,6 @@ public class EducationParser {
     private static final int START_INDEX_EDUCATION = 2;
     private static final int INDECES_PER_OBJECT_EDUCATION = 43;
 
-    public static String readFileAsString(String filepath) {
-        StringBuilder output = new StringBuilder();
-
-        try (Scanner scanner = new Scanner(new File(filepath))) {
-
-            while (scanner.hasNext()) {
-                String line = scanner.nextLine();
-                output.append(line + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return output.toString();
-    }
-
     private static String[] splitData(String data) {
         for (int i = 0; i < data.length(); i++) {
             if (data.substring(i, i + 1).equals("\"")) {
