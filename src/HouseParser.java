@@ -15,9 +15,12 @@ public class HouseParser {
         for (int i = 1; i < lines.length; i++) {
             String line = lines[i];
             line = cleanString(line);
-
+            System.out.println(line);
             String[] components = line.split(",");
-            results.add(new HouseData(components[0], Integer.parseInt(components[1])));
+
+            if (components.length >= 2) {
+                results.add(new HouseData(components[0], Integer.parseInt(components[1])));
+            }
         }
 
         return results;
