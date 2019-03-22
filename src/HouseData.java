@@ -27,6 +27,10 @@ public class HouseData {
         this.medianHousePrice = medianHousePrice;
     }
 
+    /**
+     * Returns a String with the HouseData
+     * @return A String with the county name and median house price
+     */
     public String toString() {
         return (countyName + " " + medianHousePrice);
     }

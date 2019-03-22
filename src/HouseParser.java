@@ -7,6 +7,11 @@ import java.util.ArrayList;
 
 public class HouseParser {
 
+    /**
+     * Parses the House Price Data
+     * @param houseFile Median House Prices.csv in the format of a String
+     * @return ArrayList of HouseData objects with all the parsed data
+     */
     public static ArrayList<HouseData> parseHouseData(String houseFile) {
         ArrayList<HouseData> results = new ArrayList<>();
 
@@ -26,6 +31,11 @@ public class HouseParser {
         return results;
     }
 
+    /**
+     * Cleans String of extra quotes and commas
+     * @param line
+     * @return A String without the extra quotes and commas
+     */
     private static String cleanString(String line) {
         int firstQuote = line.indexOf("\"");
         int secondQuote = line.indexOf("\"", firstQuote + 1);
