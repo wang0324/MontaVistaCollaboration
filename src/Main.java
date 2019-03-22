@@ -7,11 +7,11 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        String educationFile = DataParser.readFileAsString("Data/Education.csv");
-
-        ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
-
-        System.out.println(educationData.toString());
+//        String educationFile = DataParser.readFileAsString("Data/Education.csv");
+//
+//        ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
+//
+//        System.out.println(educationData.toString());
 
         String houseFile = DataParser.readFileAsString("Data/Median House Prices.csv");
 
