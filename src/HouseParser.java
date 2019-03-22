@@ -34,5 +34,7 @@ public class HouseParser {
             copy = copy.replaceAll(",", "");
             line = line.replaceFirst(diff, copy);
         }
+
+        return line;
     }
 }
