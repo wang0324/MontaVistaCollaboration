@@ -26,4 +26,8 @@ public class HouseData {
     public void setMedianHousePrice(int medianHousePrice) {
         this.medianHousePrice = medianHousePrice;
     }
+
+    public String toString() {
+        return (countyName + " " + medianHousePrice);
+    }
 }
