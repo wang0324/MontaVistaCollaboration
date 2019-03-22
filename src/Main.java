@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 /***
@@ -6,11 +7,21 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        String educationFile = EducationParser.readFileAsString("data/Education.csv");
+        String educationFile = DataParser.readFileAsString("Data/Education.csv");
 
         ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
 
         System.out.println(educationData.toString());
+
+        String houseFile = DataParser.readFileAsString("Data/Median House Prices.csv");
+
+        ArrayList <HouseData> houseData = HouseParser.parseHouseData(houseFile) ;
+
+        for (HouseData obj:houseData) {
+            System.out.println(obj.toString());
+        }
+
+        System.out.println("Done Parsing!");
 
     }
 }
