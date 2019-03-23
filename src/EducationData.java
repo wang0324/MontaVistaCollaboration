@@ -58,4 +58,8 @@ public class EducationData {
     public void setPercentBachelorOrHigher(double percentBachelorOrHigher) {
         this.percentBachelorOrHigher = percentBachelorOrHigher;
     }
+
+    public String toString(){
+        return "" + countyName + ", " + percentNoHSDiploma + ", " + percentHSDiplomaOnly + ", " + percentCollegeOrAssociates + ", " + percentBachelorOrHigher;
+    }
 }

@@ -44,7 +44,7 @@ public class EducationParser {
 
 
     public static ArrayList<EducationData> parseEducation(String data) {
-        ArrayList<EducationData> results = new ArrayList<>();
+        ArrayList<EducationData> results = new ArrayList<EducationData>();
 
         String[] dataArr = splitData(data);
 
