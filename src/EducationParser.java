@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class EducationParser {
     private static final int START_INDEX_EDUCATION = 2;
-    private static final int INDECES_PER_OBJECT_EDUCATION = 43;
+    private static final int INDECES_PER_OBJECT_EDUCATION = 48;
 
     private static String[] splitData(String data) {
         for (int i = 0; i < data.length(); i++) {
@@ -50,13 +50,36 @@ public class EducationParser {
 
         for (int i = START_INDEX_EDUCATION; i < dataArr.length; i += INDECES_PER_OBJECT_EDUCATION) {
             String countyName = dataArr[i];
-            double noHighSchool = Double.parseDouble(dataArr[i + 37]);
-            double onlyHighSchool = Double.parseDouble(dataArr[i + 38]);
-            double someCollege = Double.parseDouble(dataArr[i + 39]);
-            double bachelorsOrMore = Double.parseDouble(dataArr[i + 40]);
+
+            double noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore;
+
+            if (dataArr[i + 37].equals("")) {
+                noHighSchool = -1;
+            } else {
+                noHighSchool = Double.parseDouble(dataArr[i + 37]);
+            }
+
+            if (dataArr[i + 38].equals("")) {
+                onlyHighSchool = -1;
+            } else {
+                onlyHighSchool = Double.parseDouble(dataArr[i + 38]);
+            }
+
+            if (dataArr[i + 39].equals("")) {
+                someCollege = -1;
+            } else {
+                someCollege = Double.parseDouble(dataArr[i + 39]);
+            }
+
+            if (dataArr[i + 40].equals("")) {
+                bachelorsOrMore = -1;
+            } else {
+                bachelorsOrMore = Double.parseDouble(dataArr[i + 40]);
+            }
 
             EducationData result = new EducationData(countyName, noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore);
 
+            System.out.println(result.toString());
 
             results.add(result);
         }
