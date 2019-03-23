@@ -53,28 +53,28 @@ public class EducationParser {
 
             double noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore;
 
-            if (dataArr[i + 37].equals("")) {
+            if (dataArr[i + 41].equals("")) {
                 noHighSchool = -1;
             } else {
-                noHighSchool = Double.parseDouble(dataArr[i + 37]);
+                noHighSchool = Double.parseDouble(dataArr[i + 41]);
             }
 
-            if (dataArr[i + 38].equals("")) {
+            if (dataArr[i + 42].equals("")) {
                 onlyHighSchool = -1;
             } else {
-                onlyHighSchool = Double.parseDouble(dataArr[i + 38]);
+                onlyHighSchool = Double.parseDouble(dataArr[i + 42]);
             }
 
-            if (dataArr[i + 39].equals("")) {
+            if (dataArr[i + 43].equals("")) {
                 someCollege = -1;
             } else {
-                someCollege = Double.parseDouble(dataArr[i + 39]);
+                someCollege = Double.parseDouble(dataArr[i + 43]);
             }
 
-            if (dataArr[i + 40].equals("")) {
+            if (dataArr[i + 44].equals("")) {
                 bachelorsOrMore = -1;
             } else {
-                bachelorsOrMore = Double.parseDouble(dataArr[i + 40]);
+                bachelorsOrMore = Double.parseDouble(dataArr[i + 44]);
             }
 
             EducationData result = new EducationData(countyName, noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore);
