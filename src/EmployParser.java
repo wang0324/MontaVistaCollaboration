@@ -11,16 +11,13 @@ public class EmployParser {
         String[] lines = employFile.split("\n");
 
         for (int i = 8; i < lines.length; i++) {
-            String eachLine = lines[i];
-            eachLine = clean(eachLine);
-            System.out.println(lines[i]);
-           // String[] tokenList = lines[i].split(",");
-            String[] tokenList = lines[i].split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-
             float rate = 0;
 
+            String eachLine = lines[i];
+            eachLine = clean(eachLine);
+            String[] tokenList = lines[i].split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)",-1);
             System.out.println(tokenList.length);
-            if(tokenList[45] != ""){
+            if(tokenList[45]!=null && !tokenList[45].trim().equals("")){
                 rate = Float.parseFloat(tokenList[45]);
             }
 
@@ -40,11 +37,10 @@ public class EmployParser {
                 String orig = line.substring(q1, q2 + 1);
                 String replacement = orig;
                 replacement = replacement.replaceAll("\"", "");
-                replacement = replacement.replaceAll(",", "");
+                replacement = replacement.replaceAll(",", "").trim();
+
                 line = line.replace(orig, replacement);
             }
-
-
 
         return line;
     }
