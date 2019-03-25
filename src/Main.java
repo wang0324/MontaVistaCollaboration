@@ -20,9 +20,31 @@ public class Main {
 
         ArrayList <EmployData> employData = EmployParser.parseData(employFile) ;
 
-        for (:
-             ) {
-            
+        ArrayList<OutputData> output = new ArrayList<>();
+
+        for (EducationData eduData : educationData ){
+            String name = eduData.getCountyName();
+            double percentNoHS = eduData.getPercentNoHSDiploma();
+            double percentHS = eduData.getPercentHSDiplomaOnly();
+            double percentCollege = eduData.getPercentCollegeOrAssociates();
+            double percentBachelor = eduData.getPercentBachelorOrHigher();
+            int price = 0;
+            double unemploy = 0.0;
+
+            for (HouseData homes : houseData) {
+                if (homes.getCountyName().equals(name)) {
+                    price = homes.getMedianHousePrice();
+                }
+            }
+
+            for (EmployData employ : employData){
+                if (employ.getCounty().equals(name)) {
+                    unemploy = employ.getUnemploymentRate();
+                }
+            }
+
+            OutputData out = new OutputData(name, unemploy, percentNoHS, percentHS, percentCollege, percentBachelor, price);
+            output.add(out);
         }
     }
 }
