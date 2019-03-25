@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /***
@@ -5,7 +7,7 @@ import java.util.ArrayList;
  * @author Kevin Wang
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         //TODO: Marc please implement your own toString method
         String educationFile = DataParser.readFileAsString("Data/Education.csv");
         System.out.println("Parsing education");
@@ -23,8 +25,9 @@ public class Main {
         System.out.println("Getting output");
         ArrayList<OutputData> output = DataParser.getOutputData(educationData, houseData, employData);
 
+        PrintWriter pw = new PrintWriter("Output/ParsedData.txt");
         for (OutputData obj: output) {
-            System.out.println(obj.toString());
+            pw.println(obj.toString());
         }
     }
 }
