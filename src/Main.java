@@ -11,18 +11,18 @@ public class Main {
         String educationFile = DataParser.readFileAsString("Data/Education.csv");
 
         ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
+        
+        String houseFile = DataParser.readFileAsString("Data/Median House Prices.csv");
 
-        System.out.println(educationData.toString());
+        ArrayList <HouseData> houseData = HouseParser.parseHouseData(houseFile) ;
 
-//        String houseFile = DataParser.readFileAsString("Data/Median House Prices.csv");
-//
-//        ArrayList <HouseData> houseData = HouseParser.parseHouseData(houseFile) ;
-//
-//        for (HouseData obj:houseData) {
-//            System.out.println(obj.toString());
-//        }
-//
-//        System.out.println("Done Parsing!");
+        String employFile = DataParser.readFileAsString("Data/Unemployment.csv");
 
+        ArrayList <EmployData> employData = EmployParser.parseData(employFile) ;
+
+        for (:
+             ) {
+            
+        }
     }
 }

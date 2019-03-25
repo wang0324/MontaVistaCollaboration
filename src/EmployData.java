@@ -4,9 +4,9 @@
  */
 public class EmployData {
     private String county;
-    private float unemploymentRate;
+    private double unemploymentRate;
 
-    public EmployData(String county, float unemploymentRate) {
+    public EmployData(String county, double unemploymentRate) {
         this.county = county;
         this.unemploymentRate = unemploymentRate;
     }
@@ -18,7 +18,7 @@ public class EmployData {
         this.county = county;
     }
 
-    public float getUnemploymentRate(){
+    public double getUnemploymentRate(){
         return unemploymentRate;
     }
      public void setUnemploymentRate(int unemploymentRate){
