@@ -72,4 +72,12 @@ public class OutputData {
     public void setMedianHousePrice(int medianHousePrice) {
         this.medianHousePrice = medianHousePrice;
     }
+
+    /**
+     * Returns a String with all data separated by commas
+     * @return String with all data separated by commas
+     */
+    public String toString() {
+        return (countyName + "," + unemploymentRate + "," +percentNoHSDiploma + "," + percentHSDiplomaOnly + "," + percentCollegeOrAssociates + "," + percentBachelorOrHigher + "," + medianHousePrice);
+    }
 }
