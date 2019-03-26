@@ -8,7 +8,10 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        //TODO: Marc please implement your own toString method
+        String employFile = DataParser.readFileAsString("Data/Unemployment.csv");
+        System.out.println("Parsing Employ Data");
+        ArrayList <EmployData> employData = EmployParser.parseData(employFile);
+
         String educationFile = DataParser.readFileAsString("Data/Education.csv");
         System.out.println("Parsing education");
         ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
@@ -18,16 +21,16 @@ public class Main {
         System.out.println("Parsing House Data");
         ArrayList <HouseData> houseData = HouseParser.parseHouseData(houseFile) ;
 
-        String employFile = DataParser.readFileAsString("Data/Unemployment.csv");
-        System.out.println("Parsing Employ Data");
-        ArrayList <EmployData> employData = EmployParser.parseData(employFile) ;
-
         System.out.println("Getting output");
         ArrayList<OutputData> output = DataParser.getOutputData(educationData, houseData, employData);
 
         PrintWriter pw = new PrintWriter("Output/ParsedData.txt");
+        PrintWriter pw2  = new PrintWriter("Output/Everything.txt");
         for (OutputData obj: output) {
             pw.println(obj.toString());
+            pw2.println(obj.toString());
         }
+
+        System.out.println(output.size());
     }
 }

@@ -11,17 +11,20 @@ public class EmployParser {
         String[] lines = employFile.split("\n");
 
         for (int i = 8; i < lines.length; i++) {
-            float rate = 0;
+            double rate = 0;
 
             String eachLine = lines[i];
             eachLine = clean(eachLine);
             String[] tokenList = lines[i].split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)",-1);
-            System.out.println(tokenList.length);
-            if(tokenList[45]!=null && !tokenList[45].trim().equals("")){
-                rate = Float.parseFloat(tokenList[45]);
+            //System.out.println(tokenList.length);
+            if(tokenList[45]!= null && !tokenList[45].trim().equals("")){
+                rate = Double.parseDouble(tokenList[45]);
             }
 
-            finished.add(new EmployData(tokenList[2], rate));
+            EmployData data =  new EmployData(tokenList[2], rate);
+
+            finished.add(data);
+
 
         }
 

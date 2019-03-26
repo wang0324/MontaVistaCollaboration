@@ -21,6 +21,7 @@ public class EmployData {
     public double getUnemploymentRate(){
         return unemploymentRate;
     }
+
      public void setUnemploymentRate(int unemploymentRate){
         this.unemploymentRate = unemploymentRate;
      }

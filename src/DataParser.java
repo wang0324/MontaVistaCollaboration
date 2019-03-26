@@ -43,7 +43,23 @@ public class DataParser {
             }
 
             for (EmployData employ : employData){
-                if (employ.getCounty().equals(name)) {
+                int i = employ.getCounty().indexOf(",");
+                String employName;
+                int quote;
+
+                if (employ.getCounty().substring(0,1).equals("\"")) {
+                    quote = 1;
+                } else {
+                    quote = 0;
+                }
+
+                if(i == -1) {
+                    employName = employ.getCounty().substring(quote);
+                } else {
+                    employName = employ.getCounty().substring(quote, i);
+                }
+
+                if (employName.equals(name)) {
                     unemploy = employ.getUnemploymentRate();
                 }
             }
