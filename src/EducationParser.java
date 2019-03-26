@@ -79,7 +79,7 @@ public class EducationParser {
 
             EducationData result = new EducationData(countyName, noHighSchool, onlyHighSchool, someCollege, bachelorsOrMore);
 
-            System.out.println(result.toString());
+            //System.out.println(result.toString());
 
             results.add(result);
         }

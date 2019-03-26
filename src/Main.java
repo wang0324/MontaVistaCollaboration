@@ -15,7 +15,7 @@ public class Main {
         String educationFile = DataParser.readFileAsString("Data/Education.csv");
         System.out.println("Parsing education");
         ArrayList<EducationData> educationData = EducationParser.parseEducation(educationFile);
-        
+
         String houseFile = DataParser.readFileAsString("Data/Median House Prices.csv");
 
         System.out.println("Parsing House Data");
@@ -25,12 +25,17 @@ public class Main {
         ArrayList<OutputData> output = DataParser.getOutputData(educationData, houseData, employData);
 
         PrintWriter pw = new PrintWriter("Output/ParsedData.txt");
-        PrintWriter pw2  = new PrintWriter("Output/Everything.txt");
+        PrintWriter pw2  = new PrintWriter("Output/CompleteParsedData.txt");
+
         for (OutputData obj: output) {
             pw.println(obj.toString());
+
             pw2.println(obj.toString());
         }
 
         System.out.println(output.size());
+
+        pw2.flush();
+        pw2.close();
     }
 }

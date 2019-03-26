@@ -78,6 +78,6 @@ public class OutputData {
      * @return String with all data separated by commas
      */
     public String toString() {
-        return (countyName + "," + unemploymentRate + "," +percentNoHSDiploma + "," + percentHSDiplomaOnly + "," + percentCollegeOrAssociates + "," + percentBachelorOrHigher + "," + medianHousePrice);
+        return (countyName + "," + unemploymentRate + "," +percentNoHSDiploma + "," + percentHSDiplomaOnly + "," + percentCollegeOrAssociates + "," + percentBachelorOrHigher + "," + medianHousePrice + ",");
     }
 }
